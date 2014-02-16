@@ -50,11 +50,7 @@
 			  zoom: 13,
 			  center: classroom,
 			  mapTypeId: google.maps.MapTypeId.MAP
-			};
-			var map = new google.maps.Map(
-			document.getElementById("map_canvas"),
-			myOptions);
-			styles: [
+			  styles: [
   {
     "featureType": "water",
     "stylers": [
@@ -80,15 +76,20 @@
     ]
   }
 ];
-		  }
-		</script>
-	</head>
+			};
+	var map = new google.maps.Map(document.getElementById("map_canvas"),
+		myOptions);
+			
+   }
+</script>
+</head>
 	
-	<body onload="initialize()">
-	  <h1>Chimayo, New Mexico</h1>
-	  <div id="map_canvas"></div>
+<body onload="initialize()">
+  <h1>Chimayo, New Mexico</h1>
+   <div id="map_canvas"></div>
+
 	
-	</body>
+</body>
 	
 		
 		
