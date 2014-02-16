@@ -56,40 +56,29 @@
               {
                 featureType: "water",
                 stylers: [
-                  { visibility: "on" },
-                  { hue: "#0008ff" }
+                  { hue: "#0008ff" },
+                  { gamma: "0.2"
                 ]
               },{
-                featureType: "road.highway",
-                stylers: [
-                  { hue: "#ff1a00" }
-                ]
-              },{
-                featureType: "road.arterial",
-                stylers: [
-                  { hue: "#ffa200" },
-                  { visibility: "simplified" }
-                ]
-              },{
+           
                 featureType: "road.local",
-                stylers: [
-                  { visibility: "off" }
-                ]
-              },{
-                featureType: "administrative",
-                stylers: [
-                  { visibility: "simplified" }
-                ]
-              },{
-                featureType: "poi",
+                elementType: "geometry"
                 stylers: [
                   { visibility: "on" },
-                  { hue: "#00ffff" }
+                  { invert_lightness: true },
+                  { hue: "#ff00088"
                 ]
               },{
-                featureType: "poi",
+                featureType: "landscape.man_made",
                 stylers: [
-                  { visibility: "on" }
+                  { visibility: "simplified" },
+                  { hue: "#22ff00" },
+                  { saturation: 35 },
+                  { lightness: 20 },
+                  { gamma: 0.51 },
+                ]
+              },{
+                
                 ]
               }
             ]
