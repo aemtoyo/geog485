@@ -43,6 +43,7 @@
 		<script type="text/javascript">
 		  function initialize() {
 			var classroom = new google.maps.LatLng(36.013005,-105.963264)
+			var lakeMarker = new google.maps.LatLng(35974394,-105.917351)
 			var myOptions = {
 			  zoom: 13,
 			  center: classroom,
@@ -51,7 +52,11 @@
 			var map = new google.maps.Map(
 				document.getElementById("map_canvas"),
 				myOptions);
-		  }
+			var lakeMarker = new google.maps.Marker({
+			  position: classroom,
+			  title:"Sanat Cruz Lake"
+			  });
+			 classroomMarker.setMap(map);
 		</script>
 	</head>
 	
