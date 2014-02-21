@@ -23,18 +23,16 @@
 	<h2>Purpose</h2>
 	<p>The area below Santa Cruz lake is being studied because the locals in the area depend solely on water released from this lake to grow their crops. Acequias are known for providing the paths in which the water is distributed to the inhabitants of Chimayo. The acequias will be highlighted in the map.</p>
 
-  
-  	</head>
-	<style type="text/css">
-	
+  <head>
+		<style type="text/css">
 		  html { height: 100% }
 		  body { height: 100%; 
-			margin: 10px; 
-			padding: 5px; 
+			margin: 0px; 
+			padding: 0px; 
 			background-color: black; 
 			color: #CCCCCC;
-			text-align: left
-			#map_canvas { width:90%; 
+			text-align: center}
+		  #map_canvas { width:90%; 
 			height:80%; 
 			margin-left: auto; 
 			margin-right: auto }
@@ -48,7 +46,7 @@
 			var myOptions = {
 			  zoom: 17,
 			  center: classroom,
-			  mapTypeId: google.maps.MapTypeId.MAP
+			  mapTypeId: google.maps.MapTypeId.HYBRID
 			};
 			var map = new google.maps.Map(
 				document.getElementById("map_canvas"),
@@ -57,11 +55,22 @@
 		</script>
 	</head>
 	
-  	<body onload="initialize()">
-	 <h1>Chimayo, New Mexico</h1>
-	 <div id="map_canvas"></div>
+	<body onload="initialize()">
+
+	  <h1>Chimayo, New Mexico</h1>
+	  <div id="map_canvas"></div>
 	</body>
+  
+  
+  
 </html>
 
+
+
+
+
+
+
+  
 
 
