@@ -40,16 +40,17 @@
 		<script type="text/javascript"
 			src="http://maps.google.com/maps/api/js?sensor=false">
 		</script>
-		<script type="text/javascript">
-		  function initialize() {
-			var classroom = new google.maps.LatLng(36.013005,-105.963264)
-			var lakeMarker = new google.maps.LatLng(35.974394,-105.917351)
-			var myOptions = {
-			  zoom: 13,
-			  center: classroom,
-			  mapTypeId: google.maps.MapTypeId.MAP
-			  styles:
-			  styles: [
+		<script type="text/javascript"
+    src="http://maps.google.com/maps/api/js?v=3.2&sensor=false">
+</script>
+<script type="text/javascript">
+  function initialize() {
+    var classroom = new google.maps.LatLng(36.013005,-105.963264)
+    var myOptions = {
+      zoom: 14,
+      center: classroom,
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      styles: [
               {
                 featureType: "water",
                 elementType: "geometry.fill",
@@ -72,34 +73,17 @@
                 ]
               }
             ]
-			};
-			var map = new google.maps.Map(
-				document.getElementById("map_canvas"),
-				myOptions);
-			var lakeMarker = new google.maps.Marker({
-			  position: classroom,
-			  title:"Santa Cruz Lake"
-			  });
-			 classroomMarker.setMap(map);
-		</script>
-	</head>
-	
-	<body onload="initialize()">
+    };
+    var map = new google.maps.Map(document.getElementById("map_canvas"),
+        myOptions);
+  }
+</script>
+</head>
 
-	  <h1>Chimayo, New Mexico</h1>
-	  <div id="map_canvas"></div>
-	</body>
-  
-  
-  
+<body onload="initialize()">
+  <h1>Chimayo, NM</h1>
+  <div id="map_canvas"></div>
+
+</body>
+
 </html>
-
-
-
-
-
-
-
-  
-
-
