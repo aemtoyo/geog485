@@ -49,6 +49,7 @@
     var pond1 = new google.maps.LatLng(36.013346,-105.963141)
     var pond2 = new google.maps.LatLng(36.012205,-105.965015)
     var pond3 = new google.maps.LatLng(36.011795,-105.966751)
+    var hwsantacruz = new google.maps.LatLng(35.978579,-105.919665)
     
     var myOptions = {
       zoom: 14,
@@ -98,6 +99,12 @@
 			  title:"Storage Pond 3 (3 of 3 on this acequia)"
 			  });
 			pond3Marker.setMap(map);
+     
+     var hwsantacruzMarker = new google.maps.Marker({
+			  position: hwsantacruz,
+			  title:"Headwaters for all the acequias in Chimayo are here at Santa Cruz Lake."
+			  });
+			hwsantacruzMarker.setMap(map);
 			
   }
 </script>
