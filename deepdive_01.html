@@ -50,6 +50,7 @@
     var pond2 = new google.maps.LatLng(36.012205,-105.965015)
     var pond3 = new google.maps.LatLng(36.011795,-105.966751)
     var hwsantacruz = new google.maps.LatLng(35.978579,-105.919665)
+    var floodcontrol = new google.maps.LatLng(36.011165,-105.979879)
     
     var myOptions = {
       zoom: 14,
@@ -102,9 +103,15 @@
      
      var hwsantacruzMarker = new google.maps.Marker({
 			  position: hwsantacruz,
-			  title:"Santa Cruz Lake."
+			  title:"Santa Cruz Lake"
 			  });
 			hwsantacruzMarker.setMap(map);
+    
+     var floodcontrol = new google.maps.Marker({
+			  position: floodcontrol,
+			  title:"Flood Control Dam"
+			  });
+			floodcontrolMarker.setMap(map);
 			
   }
 </script>
