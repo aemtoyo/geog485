@@ -48,6 +48,30 @@
 			  zoom: 13,
 			  center: classroom,
 			  mapTypeId: google.maps.MapTypeId.MAP
+			  styles:
+			  styles: [
+              {
+                featureType: "water",
+                elementType: "geometry.fill",
+                stylers: [
+                  { visibility: "on" },
+                  { color: "#ff0000" }
+                ]
+              },{
+                featureType: "road.local",
+                elementType: "geometry",
+                stylers: [
+                  { color: "#808080" }
+                ]
+              },{
+                featureType: "landscape.man_made",
+                stylers: [
+                  {color: "#ffff00" },
+                  { visibility: "simplified" }
+               
+                ]
+              }
+            ]
 			};
 			var map = new google.maps.Map(
 				document.getElementById("map_canvas"),
