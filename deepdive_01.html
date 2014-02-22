@@ -47,6 +47,9 @@
   function initialize() {
     var chimayo = new google.maps.LatLng(36.013005,-105.963264)
     var pond1 = new google.maps.LatLng(36.013346,-105.963141)
+    var pond2 = new google.maps.LatLng(36.012205,-105.965015)
+    var pond3 = new google.maps.LatLng(36.011795,-105.966751)
+    
     var myOptions = {
       zoom: 14,
       center: chimayo,
@@ -81,6 +84,18 @@
      var pond1Marker = new google.maps.Marker({
 			  position: pond1,
 			  title:"Storage Pond 1 (1 of 3 on this acequia)"
+			  });
+			pond1Marker.setMap(map);
+			
+     var pond2Marker = new google.maps.Marker({
+			  position: pond1,
+			  title:"Storage Pond 2 (2 of 3 on this acequia)"
+			  });
+			pond1Marker.setMap(map);
+			
+     var pon31Marker = new google.maps.Marker({
+			  position: pond1,
+			  title:"Storage Pond 3 (3 of 3 on this acequia)"
 			  });
 			pond1Marker.setMap(map);
 			
