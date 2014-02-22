@@ -51,6 +51,7 @@
 			  center: chimayo,
 			  mapTypeId: google.maps.MapTypeId.ROADMAP
 			  styles: 
+			  [ { "featureType": "water", "elementType": "geometry.fill", "stylers": [ { "visibility": "on" }, { "color": "#ff0000" } ] },{ "featureType": "landscape.man_made", "stylers": [ { "color": "#ffff00" } ] },{ "featureType": "road.local", "elementType": "geometry", "stylers": [ { "color": "#808080" } ] } 
   	};
 	var map = new google.maps.Map(document.getElementById("map_canvas"),
 		 myOptions);
