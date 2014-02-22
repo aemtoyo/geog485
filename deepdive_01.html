@@ -46,6 +46,7 @@
 <script type="text/javascript">
   function initialize() {
     var chimayo = new google.maps.LatLng(36.013005,-105.963264)
+    var pond1 = new google.maps.LatLng(36.013346,-105.963141)
     var myOptions = {
       zoom: 14,
       center: chimayo,
@@ -76,6 +77,13 @@
     };
     var map = new google.maps.Map(document.getElementById("map_canvas"),
         myOptions);
+     
+     var pond1Marker = new google.maps.Marker({
+			  position: pond1,
+			  title:"Geography 485L/585L Classroom, Bandelier East, Room 106"
+			  });
+			pond1Marker.setMap(map);
+			
   }
 </script>
 </head>
