@@ -121,6 +121,15 @@
 			  });
 			google.maps.event.addListener(pond1Marker, 'click', function() {
 			  classInfoWindow.open(map,pond1Marker);
+			  
+var classInfoContent = '<div class="infoBox">' +
+			  '<p>This is the location for 12 of the 3 storage ponds along this acequia.</p>' +
+			  '</div>'
+			var classInfoWindow = new google.maps.InfoWindow({
+			  content: classInfoContent
+			  });
+			google.maps.event.addListener(pond2Marker, 'click', function() {
+			  classInfoWindow.open(map,pond2Marker);
 			});
   }
 </script>
