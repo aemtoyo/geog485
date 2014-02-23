@@ -36,7 +36,7 @@
 			height:80%; 
 			margin-left: auto; 
 			margin-right: auto }
-		.infobox { color:black );
+		.infoBox { color:black );
 		</style>
 		<script type="text/javascript"
 			src="http://maps.google.com/maps/api/js?sensor=false">
@@ -144,17 +144,6 @@
 			  classInfoWindow.open(map,pond3Marker);
 			});
 			
-    var classInfoContent = '<div class="infoBox">' +
-			  '<p>Thirty miles north of Santa Fe, NM , the snow-fed waters of the Rio del Medio and the Rio Frijoles begin a 2,000-mile journey and a 7,000-foot descent to the Gulf of Mexico. For a time they gather at Santa Cruz Lake at the base of the Sangre de Cristo Mountains near Chimayo, behind the 125-foot Santa Cruz Dam.Built in 1929 by the Santa Cruz Irrigation District, the dam is 535 feet across and 90 feet deep at the overflowing spillway. The lake covers 121 surface acres with water in the foothills of the Sangre de Cristo Mountains, providing recreational opportunities for anglers, picnickers, campers, and boat lovers alike.Santa Cruz Lake Recreation Area is located on public land managed by the Bureau of Land Management (BLM). The Santa Cruz Irrigation District regulates water releases for agricultural use in the Santa Cruz Valley. The lake normally contains water year-round and may vary in depth as much as 30 feet..</p>' +
-			  '</div>'
-			var classInfoWindow = new google.maps.InfoWindow({
-			  content: classInfoContent
-			  });
-			google.maps.event.addListener(hwsantacruzMarker, 'click', function() {
-			  classInfoWindow.open(map,hwsantacruzMarker);
-			});
-			
-    
   }
 </script>
 </head>
