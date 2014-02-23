@@ -142,6 +142,26 @@
 			google.maps.event.addListener(pond3Marker, 'click', function() {
 			  classInfoWindow.open(map,pond3Marker);
 			});
+			
+    var classInfoContent = '<div class="infoBox">' +
+			  '<p>This is the location for 3 of the 3 storage ponds along this acequia.</p>' +
+			  '</div>'
+			var classInfoWindow = new google.maps.InfoWindow({
+			  content: classInfoContent
+			  });
+			google.maps.event.addListener(hwsantacruzMarker, 'click', function() {
+			  classInfoWindow.open(map,hwsantacruzMarker);
+			});
+			
+    var classInfoContent = '<div class="infoBox">' +
+			  '<p>This is the location for 3 of the 3 storage ponds along this acequia.</p>' +
+			  '</div>'
+			var classInfoWindow = new google.maps.InfoWindow({
+			  content: classInfoContent
+			  });
+			google.maps.event.addListener(floodcontrolMarker, 'click', function() {
+			  classInfoWindow.open(map,floodcontrolMarker);
+			});
   }
 </script>
 </head>
