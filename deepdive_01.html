@@ -36,7 +36,7 @@
 			height:80%; 
 			margin-left: auto; 
 			margin-right: auto }
-		.infobox{ color:black );
+		.infobox { color:black );
 		</style>
 		<script type="text/javascript"
 			src="http://maps.google.com/maps/api/js?sensor=false">
@@ -154,15 +154,7 @@
 			  classInfoWindow.open(map,hwsantacruzMarker);
 			});
 			
-    var classInfoContent = '<div class="infoBox">' +
-			  '<p>This is the location for a flood control dam. Monsoon season rains in this area produce high run off due to the minimal amount of vegetation. To control possible high dischage values this dams are built. This dam does not contain water on a daily basis.</p>' +
-			  '</div>'
-			var classInfoWindow = new google.maps.InfoWindow({
-			  content: classInfoContent
-			  });
-			google.maps.event.addListener(floodcontrolMarker, 'click', function() {
-			  classInfoWindow.open(map,floodcontrolMarker);
-			});
+    
   }
 </script>
 </head>
