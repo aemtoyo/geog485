@@ -112,7 +112,15 @@
 			  title:"Flood Control Dam"
 			  });
 			floodcontrolMarker.setMap(map);
-			
+		
+    var pond1InfoContent = '<div class="infoBox">' +
+			  '<p>This is the location for 1 of the 3 storage ponds along this acequia.</p>' +
+			  '</div>'
+			var classInfoWindow = new google.maps.InfoWindow({
+			  content: classInfoContent
+			  });
+			google.maps.event.addListener(pond1Marker, 'click', function() {
+			  classInfoWindow.open(map,pond1Marker);
   }
 </script>
 </head>
