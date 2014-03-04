@@ -31,7 +31,7 @@
 	
 	<ol>
 		<li>What request type is common across all three (WMS, WFS, WCS) OGC web services that we have learned about?</li>
-		<p><b>ANSWER:</b> Google</p>
+		<p><b>ANSWER:</b> GetCapabilities</p>
 		
 	</ol>
 	
@@ -39,9 +39,16 @@
 	<p>Answer the following questions about a WMS GetCapabilities request</p>
 	<ol>
 		<li>What are the required parameters, and what do they represent?</li>
-		<p><b>ANSWER:</b></p>
+		<p><b>ANSWER:</b>
+			<ul>
+				<li> WMTVER=1.0.0; Is asking is asking to request which version of the Web Mapping Service </li>
+				<li> SERVICE=WMS; Is asking what is the service type.</li>
+				<li> REQUEST=capabilities; Is asking for the name of service.</li>
+				<li> REQUEST=GetCapabilities; Is asking to get capabilities  from the specified name.</li>
+			</ul>
+		</p>
 		<li>What is returned in response to a WMS GetCapabilities request?</li>
-		<p><b>ANSWER:</b></p>
+		<p><b>ANSWER:</b> You should recieve and XML document.</p>
 	</ol>
 	
 	<h2>Question 3</h2>
