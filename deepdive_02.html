@@ -82,33 +82,37 @@
 		
 	</ol>
 
-	<h2>Question 6</h2>
-	<ul>
-		<li>for the area surrounding Bernalillo County (-107.2,34.7,-106,35.25) as a 200x200 pixel JPEG</li>
-	
-		<p><b>ANSWER:</b> 
-		<p>Request used: http://gstore.unm.edu/apps/rgis/datasets/97810/services/ogc/wms?VERSION=1.1.1&SERVICE=WMS&REQUEST=GetMap&BBOX=-107.2,34.7,-106,35.25&LAYERS=2007fe_35_county00&WIDTH=200&HEIGHT=200&SRS=EPSG:4326&FORMAT=jpeg&STYLES=</p>
-		<a href="http://gstore.unm.edu/apps/rgis/datasets/97810/services/ogc/wms?VERSION=1.1.1&SERVICE=WMS&REQUEST=GetMap&BBOX=-107.2,34.7,-106,35.25&LAYERS=2007fe_35_county00&WIDTH=200&HEIGHT=200&SRS=EPSG:4326&FORMAT=jpeg&STYLES="http://gstore.unm.edu/apps/rgis/datasets/97810/services/ogc/wms?VERSION=1.1.1&SERVICE=WMS&REQUEST=GetMap&BBOX=-107.2,34.7,-106,35.25&LAYERS=2007fe_35_county00&WIDTH=200&HEIGHT=200&SRS=EPSG:4326&FORMAT=jpeg&STYLES=</a>
-			<img src="Bernalillo1.jpg"></a>
-		
-		<li>for the same area as a 500x500 pixel PNG</li>
-	
-		<p><b>ANSWER:</b> 
-	
-		<p> Request used: "http://gstore.unm.edu/apps/rgis/datasets/97810/services/ogc/wms?VERSION=1.1.1&SERVICE=WMS&REQUEST=GetMap&BBOX=-107.2,34.7,-106,35.25&LAYERS=2007fe_35_county00&WIDTH=500&HEIGHT=500&SRS=EPSG:4326&FORMAT=png&STYLES="</p>
-		<a href="http://gstore.unm.edu/apps/rgis/datasets/97810/services/ogc/wms?VERSION=1.1.1&SERVICE=WMS&REQUEST=GetMap&BBOX=-107.2,34.7,-106,35.25&LAYERS=2007fe_35_county00&WIDTH=500&HEIGHT=500&SRS=EPSG:4326&FORMAT=png&STYLES="http://gstore.unm.edu/apps/rgis/datasets/97810/services/ogc/wms?VERSION=1.1.1&SERVICE=WMS&REQUEST=GetMap&BBOX=-107.2,34.7,-106,35.25&LAYERS=2007fe_35_county00&WIDTH=500&HEIGHT=500&SRS=EPSG:4326&FORMAT=png&STYLES=</a>
-			<img src="Bernalillo2.png"></a>
-	</ul>
-	
-
 	<h2>Question 7</h2>
-	<ul>
+	<p>Use the cs2cs utility to convert the following WGS84 Geographic Coordinates into UTM Zone 13, NAD83 coordinates. Include your cs2cs command and output in your writeup.</p>
+	<ol>
+		<li>35°14′19.29″ N, 107°36′30.67″ W (Mount Taylor Summit)</li>
+		<p><b>ANSWER:</b></p>
+		<li>34°16′40.34″ N, 103°19′28.49″ W (Blackwater Draw)</li>
+		<p><b>ANSWER:</b></p>
+	</ol>
+		
+	<h2>Question 8</h2>
 	
-	<li>Add a second Placemark element to the KML file that represents a square region that is completely contained within the state boundary. Save the KML file and open it in Google Earth (download from http://www.google.com/earth/index.html) or view it in Google Maps (by adding it to your GitHub gh-pages branch) as demonstrated in the lecture to verify that you have successfully created the file. Submit the KML file (as a link in your writeup) as part of your writeup for the milestone.</li>
+	<p>Retrieve the GetCapabilities XML response from the following WMS, and answer the following questions.</p> 
+	<p>http://gstore.unm.edu/apps/rgis/datasets/715663ba-c1c3-414c-84a7-c671526f8316/services/ogc/wms?SERVICE=wms&REQUEST=GetCapabilities&VERSION=1.1.1</p>
+		
+	<ol>
+		<li>WWhat is the Title of the service?</li>
+		<p><b>ANSWER:</b></p>
+		<li>Who is the Contact Person for questions about the service?</li>
+		<p><b>ANSWER:</b></p>
+		<li>What are the available image formats for the GetMap request for this service?</li>
+		<p><b>ANSWER:</b></p>
+		<li>What are the SRS/CRS’s for which layers from this service are available (remember that nested layers inherit the SRS/CRS of their parent layers).</li>
+		<p><b>ANSWER:</b></p>
+	</ol>
 	
-	<p><b> ANSWER:</b> Download Google Earth NM Boundry (KML): <a href="http://rgis.unm.edu/gstore/datasets/3f0a85aa-b7f8-47bd-8db6-1c0e66becf72/nm_state_bdy_00.derived.kml"<a/>KML File</a></p>
-	<p><b> ANSWER:</b> Download Google Earth NM Boundry With Added Placemark (KML): <a href="https://www.dropbox.com/s/2hen81h11n7fwn6/nm_state_bdy_00_PM.kml.zip"</a>KML File<a/></p>
+	<h2>Question 9</h2>
 	
+	<ol>
+		<li>Formulate a GetMap request for the “tl_2010_35_bg10” layer from this service, for a 500x500 pixel map image that is 0.05-degrees wide and 0.05-degress high, with the SW corner of the map image located at 35°N and -106°45'E. Include in your write-up the complete GetMap request and the returned map image.  </li>
+		<p><b>ANSWER:</b></p>
+	</ol>
 		
 	</body>
 	
