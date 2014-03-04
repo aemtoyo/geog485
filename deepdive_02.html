@@ -48,13 +48,31 @@
 			</ul>
 		</p>
 		<li>What is returned in response to a WMS GetCapabilities request?</li>
-		<p><b>ANSWER:</b> You should recieve and XML document.</p>
+		<p><b>ANSWER:</b> You should recieve an XML document.</p>
 	</ol>
 	
 	<h2>Question 3</h2>
+	<p>Answer the following questions about a WMS GetMap request</p>
 	<ol>
 		<li>What are the required parameters, and what do they represent?</li>
-		<p><b>ANSWER:</b></p>
+		<p><b>ANSWER:</b>
+			<ul>
+				<li> WMTVER=1.0.0; Request version</li>
+				<li> VERSION=version; Request version.</li>
+				<li> REQUEST=map; Request name.</li>
+				<li> REQUEST=GetMap; Request name</li>
+				<li> LAYERS=layer_list; Comma-separated list of one or more map layers. Optional (ver. 1.1, 1.1.1) if SLD parameter is present.</li>
+				<li> STYLES=style_list; Comma-separated list of one rendering style per requested layer. Optional if SLD parameter is present.</li>
+				<li> SRS=namespace:identifier; Spatial Reference System.</li>
+				<li> CRS=namespace:identifier; Spatial Reference System.</li>
+				<li> BBOX=minx,miny,maxx,maxy; Bounding box corners (lower left, upper right)in SRS units.</li>
+				<li> WIDTH=output_width; Width in pixels of map picture.</li>
+				<li> HEIGHT=output_height; Height in pixels of map picture.</li>
+				<li> FORMAT=output_format; Output format of map.</li>
+				
+				
+			</ul>
+		</p>
 		<li>What is returned in response to a WMS GetMap request?</li>
 		<p><b>ANSWER:</b></p>
 		<li>What is the significance of transparency in WMS requests?</li>
