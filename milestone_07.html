@@ -46,7 +46,12 @@ BBOX: -109.5, 34.5, -106.5, 36.5</h2>
 	
 <h2>Question 4</h2>
 	<p>Formulate a WMS request for a 900x600 pixel map image that represents the full 3-degree width of the geographic region, and is based upon the minimum Y value of 34.5 degrees North Latitude. Include in your answer both the WMS request and the returned map image.</p>
-	<p><b>ANSWER:</b> So, =(-106.5-(-109.5))/(36.5-34.5)=1.5 </p>
+	<p><b>ANSWER:</b> Given  BBOX: -109.5, 34.5, -106.5, maxy and ratio = 900/600=1.5 and And, ratio = width/height=(maxx-minx)/(maxy-miny) we can get a maxy</p>
+	<p>1.5=(-106.5-(-109.5))/(maxy-34.5)</p>
+	<p> maxy = 36.5</p>
+	<p>The WMS request is <a href="http://gstore.unm.edu/apps/rgis/datasets/97810/services/ogc/wms?VERSION=1.1.1&SERVICE=WMS&REQUEST=GetMap&BBOX=-109.1,34.5,-106.0,36.5&LAYERS=2007fe_35_county00&WIDTH=900&HEIGHT=600&SRS=EPSG:4326&FORMAT=jpeg&STYLES=">http://gstore.unm.edu/apps/rgis/datasets/97810/services/ogc/wms?VERSION=1.1.1&SERVICE=WMS&REQUEST=GetMap&BBOX=-109.1,34.5,-106.0,36.5&LAYERS=2007fe_35_county00&WIDTH=900&HEIGHT=600&SRS=EPSG:4326&FORMAT=jpeg&STYLES="></a>
+	<img src="http://gstore.unm.edu/apps/rgis/datasets/97810/services/ogc/wms?VERSION=1.1.1&SERVICE=WMS&REQUEST=GetMap&BBOX=-109.1,34.5,-106.0,36.5&LAYERS=2007fe_35_county00&WIDTH=900&HEIGHT=600&SRS=EPSG:4326&FORMAT=jpeg&STYLES="
+	</p>
 	
 <h2>Question 5</h2>
 	<p>Given a WMS that is represented by the following GetCapabilities request, formulate individual GetMap requests using the following parameters:</p>
