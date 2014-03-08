@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+	
+	<!-- This page can be used as a template for completing your writeups for milestone and "deep dive" assignments -->
+	<!-- Replace the content placeholders with your own content -->
+	
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<title>Geography 485L/585L Assignment 6</title>
+	</head>
+	
+	<style type="text/css">
+		  html { height: 100% }
+		  body { height: 100%; 
+			margin: 10px; 
+			padding: 10px; 
+			background-color: black; 
+			color: #CCCCCC;
+			text-align: left}
+	</style>
+	<body>
+	<p>
+	Andrew Martinez<br>
+	March 1, 2014
+	</p>
+	
+	<h1>Lab Assignment / Assignment #5</h1>
+	
+	<h2>Question 1</h2>
+	<p>What search engine did you use?</p>
+	<p><b>ANSWER:</b> Google</p>
+	
+	<h2>Question 2</h2>
+	<p>How many ‘hits’ did you get?</p>
+	<p><b>ANSWER:</b> About 246,000</p>
+	
+	<h2>Question 3</h2>
+	<p>How useful (generally in terms of getting a pointers to live WMS services [defined as a functioning GetCapabilities request]) were the ‘hits’? Pick two of the services that included live "GetCapabilities" requests that you found above, and answer the following questions about each.</p>
+	
+	<p><b>ANSWER:</b> The hits were suprisingly useful many of the of the "hits' on the first page were useful in regards to the "GetCapabilities"</p>
+
+	<p> The two that I will be using are; 
+	<ol>
+		<li>National Atlas</li>
+		<li>LIDAR</li>
+	</ol>
+		
+	</p>
+
+	<h2>Question 4 (service #1)</h2>
+	<ul>
+		<li>What is the URL for the full GetCapabilities request to the service?</li>
+		<p><b>ANSWER:</b> http://webservices.nationalatlas.gov/wms/water?SERVICE=WMS&REQUEST=GetCapabilities</p>
+		<li>What is the Name of the service?</li>
+		<p><b>ANSWER:</b> WMS</p>
+		<li>What Format(s) are available for GetMap requests from the service?</li>
+		<p><b>ANSWER:</b> text/xml</p>
+		<li>How many layers are included in the service (including nesting layers)?</li>
+		<p><b>ANSWER:</b> 132 Layers</p>
+	</ul>
+	<p></p>
+
+	<h2>Question 4 (service #2)</h2>
+	<ul> 
+		<li>What is the URL for the full GetCapabilities request to the service?</li>
+		<p><b>ANSWER:</b> http://LIDARserver.com/vancouver?SERVICE=WMS&REQUEST=GetCapabilities</p>
+		<li>What is the Name of the service?</li>
+		<p><b>ANSWER:</b> WMS</p>
+		<li>What Format(s) are available for GetMap requests from the service?</li>
+		<p><b>ANSWER:</b> text/xml</p>
+		<li>How many layers are included in the service (including nesting layers)?</li>
+		<p><b>ANSWER:</b> 4 Layers</p>
+	</ul>
+	<p></p>
+
+	<h2>Question 5</h2>
+	<p>For one of the layers in the first service,</p>
+	<ul>
+		<li>What is the name of the layer?</li>
+		<p><b>ANSWER:</b> Dams</p>
+		<li>What is the SRS of the layer?</li>
+		<p><b>ANSWER:</b>  There are actually 11 SRS but the first one is EPSG:4326.</p>
+		<li>What is the name of the projection that matches the SRS EPSG code?</li>
+		<p><b>ANSWER:</b> WGS 84</p>
+		<li>What is the LatLonBoundingBox of the layer?</li>
+		<p><b>ANSWER:</b> minx=17.7314 miny=-164.598 maxx=70.2814 maxy=-64.7801</p>
+	</ul>
+	<p></p>
+
+	<h2>Question 6</h2>
+	<ul>
+		<li>for the area surrounding Bernalillo County (-107.2,34.7,-106,35.25) as a 200x200 pixel JPEG</li>
+	
+		<p><b>ANSWER:</b> 
+		<p>Request used: http://gstore.unm.edu/apps/rgis/datasets/97810/services/ogc/wms?VERSION=1.1.1&SERVICE=WMS&REQUEST=GetMap&BBOX=-107.2,34.7,-106,35.25&LAYERS=2007fe_35_county00&WIDTH=200&HEIGHT=200&SRS=EPSG:4326&FORMAT=jpeg&STYLES=</p>
+			<img src="http://gstore.unm.edu/apps/rgis/datasets/97810/services/ogc/wms?VERSION=1.1.1&SERVICE=WMS&REQUEST=GetMap&BBOX=-107.2,34.7,-106,35.25&LAYERS=2007fe_35_county00&WIDTH=200&HEIGHT=200&SRS=EPSG:4326&FORMAT=jpeg&STYLES=">
+		
+		<li>for the same area as a 500x500 pixel PNG</li>
+	
+		<p><b>ANSWER:</b> 
+		<p> Request used: http://gstore.unm.edu/apps/rgis/datasets/97810/services/ogc/wms?VERSION=1.1.1&SERVICE=WMS&REQUEST=GetMap&BBOX=-107.2,34.7,-106,35.25&LAYERS=2007fe_35_county00&WIDTH=500&HEIGHT=500&SRS=EPSG:4326&FORMAT=png&STYLES=</p>
+			<img src="http://gstore.unm.edu/apps/rgis/datasets/97810/services/ogc/wms?VERSION=1.1.1&SERVICE=WMS&REQUEST=GetMap&BBOX=-107.2,34.7,-106,35.25&LAYERS=2007fe_35_county00&WIDTH=500&HEIGHT=500&SRS=EPSG:4326&FORMAT=png&STYLES="http://gstore.unm.edu/apps/rgis/datasets/97810/services/ogc/wms?VERSION=1.1.1&SERVICE=WMS&REQUEST=GetMap&BBOX=-107.2,34.7,-106,35.25&LAYERS=2007fe_35_county00&WIDTH=500&HEIGHT=500&SRS=EPSG:4326&FORMAT=png&STYLES=">
+	</ul>
+	
+
+	<h2>Question 7</h2>
+	<ul>
+	
+	<li>Add a second Placemark element to the KML file that represents a square region that is completely contained within the state boundary. Save the KML file and open it in Google Earth (download from http://www.google.com/earth/index.html) or view it in Google Maps (by adding it to your GitHub gh-pages branch) as demonstrated in the lecture to verify that you have successfully created the file. Submit the KML file (as a link in your writeup) as part of your writeup for the milestone.</li>
+	
+	<p><b> ANSWER:</b> Download Google Earth NM Boundry With Added Placemark (KML): <a href="KML/nm_state_bdy_00_PM.kml"</a>KML File<a/></p>
+	
+	</ul>	
+	
+	</body>
+	
+	
+</html>
