@@ -22,98 +22,54 @@
 	<body>
 	<p>
 	Andrew Martinez<br>
-	March 1, 2014
+	March 8, 2014
 	</p>
 	
-	<h1>Lab Assignment / Assignment #5</h1>
+	<h1>Lab Assignment / Assignment #7</h1>
 	
-	<h2>Question 1</h2>
-	<p>What search engine did you use?</p>
-	<p><b>ANSWER:</b> Google</p>
+<h2>Question 1</h2>
+	<p>What is the aspect ratio of this geographic region?</p>
+	<p><b>ANSWER:</b></p>
 	
-	<h2>Question 2</h2>
-	<p>How many ‘hits’ did you get?</p>
-	<p><b>ANSWER:</b> About 246,000</p>
+<h2>Question 2</h2>
+	<p>What would be the height (in whole pixels) for a map image for this region that is 600 pixels wide?</p>
+	<p><b>ANSWER:</b></p>
 	
-	<h2>Question 3</h2>
-	<p>How useful (generally in terms of getting a pointers to live WMS services [defined as a functioning GetCapabilities request]) were the ‘hits’? Pick two of the services that included live "GetCapabilities" requests that you found above, and answer the following questions about each.</p>
+<h2>Question 3</h2>
+	<p>Formulate a WMS request that reflects the values determined in 1.1 and 1.2 above for the WMS service used above in the examples. Include in your answer both the actual WMS request and the returned map image.</p>
+	<p><b>ANSWER:</b></p>
 	
-	<p><b>ANSWER:</b> The hits were suprisingly useful many of the of the "hits' on the first page were useful in regards to the "GetCapabilities"</p>
-
-	<p> The two that I will be using are; 
-	<ol>
-		<li>National Atlas</li>
-		<li>LIDAR</li>
-	</ol>
+<h2>Question 4</h2>
+	<p>Formulate a WMS request for a 900x600 pixel map image that represents the full 3-degree width of the geographic region, and is based upon the minimum Y value of 34.5 degrees North Latitude. Include in your answer both the WMS request and the returned map image.</p>
+	<p><b>ANSWER:</b></p>
+	
+<h2>Question 5</h2>
+	<p>Given a WMS that is represented by the following GetCapabilities request, formulate individual GetMap requests using the following parameters:</p>
+	<p>BBOX=-106.639,35.074,-106.609,35.094 WIDTH=600 HEIGHT=400</p>
+	<p>for each of the following layers: 0 (TNM_Large_Scale_Imagery) and 1 (1_foot_imagery) - yes - USGS just gave numbers as the layer names</p>
+	<p> http://raster.nationalmap.gov/ArcGIS/services/TNM_Large_Scale_Imagery/
+MapServer/WMSServer?request=GetCapabilities&service=WMS<a href="http://raster.nationalmap.gov/ArcGIS/services/TNM_Large_Scale_Imagery/
+MapServer/WMSServer?request=GetCapabilities&service=WMS"> Link</a></p>
+	<p><b>ANSWER:</b></p>
+	
+<h2>Question 6</h2>
+	<p>Which layers return map images that display image content (i.e. return a non-blank image)?</p>
+	<p><b>ANSWER:</b></p>
+	
+<h2>Question 7</h2>
+	<p>From examining the information for these layers in the GetCapabilities XML document - which element in each layer’s service metadata do you think provides information about the scales for which the layer will return map images containing data?</p>
+	<p><b>ANSWER:</b></p>
+	
+<h2>Question 8</h2>
+	<p>Which map images contain data for each of the following map image widths (remember to adjust the image height to match the BBOX of the request)</p>
+	<ul>
+		<li>30 pixels</li>
+		<p><b>ANSWER:</b></p>
+		<li>60 pixels</li>
+		<p><b>ANSWER:</b></p>
+	</ul>
 		
-	</p>
-
-	<h2>Question 4 (service #1)</h2>
-	<ul>
-		<li>What is the URL for the full GetCapabilities request to the service?</li>
-		<p><b>ANSWER:</b> http://webservices.nationalatlas.gov/wms/water?SERVICE=WMS&REQUEST=GetCapabilities</p>
-		<li>What is the Name of the service?</li>
-		<p><b>ANSWER:</b> WMS</p>
-		<li>What Format(s) are available for GetMap requests from the service?</li>
-		<p><b>ANSWER:</b> text/xml</p>
-		<li>How many layers are included in the service (including nesting layers)?</li>
-		<p><b>ANSWER:</b> 132 Layers</p>
-	</ul>
-	<p></p>
-
-	<h2>Question 4 (service #2)</h2>
-	<ul> 
-		<li>What is the URL for the full GetCapabilities request to the service?</li>
-		<p><b>ANSWER:</b> http://LIDARserver.com/vancouver?SERVICE=WMS&REQUEST=GetCapabilities</p>
-		<li>What is the Name of the service?</li>
-		<p><b>ANSWER:</b> WMS</p>
-		<li>What Format(s) are available for GetMap requests from the service?</li>
-		<p><b>ANSWER:</b> text/xml</p>
-		<li>How many layers are included in the service (including nesting layers)?</li>
-		<p><b>ANSWER:</b> 4 Layers</p>
-	</ul>
-	<p></p>
-
-	<h2>Question 5</h2>
-	<p>For one of the layers in the first service,</p>
-	<ul>
-		<li>What is the name of the layer?</li>
-		<p><b>ANSWER:</b> Dams</p>
-		<li>What is the SRS of the layer?</li>
-		<p><b>ANSWER:</b>  There are actually 11 SRS but the first one is EPSG:4326.</p>
-		<li>What is the name of the projection that matches the SRS EPSG code?</li>
-		<p><b>ANSWER:</b> WGS 84</p>
-		<li>What is the LatLonBoundingBox of the layer?</li>
-		<p><b>ANSWER:</b> minx=17.7314 miny=-164.598 maxx=70.2814 maxy=-64.7801</p>
-	</ul>
-	<p></p>
-
-	<h2>Question 6</h2>
-	<ul>
-		<li>for the area surrounding Bernalillo County (-107.2,34.7,-106,35.25) as a 200x200 pixel JPEG</li>
-	
-		<p><b>ANSWER:</b> 
-		<p>Request used: http://gstore.unm.edu/apps/rgis/datasets/97810/services/ogc/wms?VERSION=1.1.1&SERVICE=WMS&REQUEST=GetMap&BBOX=-107.2,34.7,-106,35.25&LAYERS=2007fe_35_county00&WIDTH=200&HEIGHT=200&SRS=EPSG:4326&FORMAT=jpeg&STYLES=</p>
-			<img src="http://gstore.unm.edu/apps/rgis/datasets/97810/services/ogc/wms?VERSION=1.1.1&SERVICE=WMS&REQUEST=GetMap&BBOX=-107.2,34.7,-106,35.25&LAYERS=2007fe_35_county00&WIDTH=200&HEIGHT=200&SRS=EPSG:4326&FORMAT=jpeg&STYLES=">
-		
-		<li>for the same area as a 500x500 pixel PNG</li>
-	
-		<p><b>ANSWER:</b> 
-		<p> Request used: http://gstore.unm.edu/apps/rgis/datasets/97810/services/ogc/wms?VERSION=1.1.1&SERVICE=WMS&REQUEST=GetMap&BBOX=-107.2,34.7,-106,35.25&LAYERS=2007fe_35_county00&WIDTH=500&HEIGHT=500&SRS=EPSG:4326&FORMAT=png&STYLES=</p>
-			<img src="http://gstore.unm.edu/apps/rgis/datasets/97810/services/ogc/wms?VERSION=1.1.1&SERVICE=WMS&REQUEST=GetMap&BBOX=-107.2,34.7,-106,35.25&LAYERS=2007fe_35_county00&WIDTH=500&HEIGHT=500&SRS=EPSG:4326&FORMAT=png&STYLES="http://gstore.unm.edu/apps/rgis/datasets/97810/services/ogc/wms?VERSION=1.1.1&SERVICE=WMS&REQUEST=GetMap&BBOX=-107.2,34.7,-106,35.25&LAYERS=2007fe_35_county00&WIDTH=500&HEIGHT=500&SRS=EPSG:4326&FORMAT=png&STYLES=">
-	</ul>
-	
-
-	<h2>Question 7</h2>
-	<ul>
-	
-	<li>Add a second Placemark element to the KML file that represents a square region that is completely contained within the state boundary. Save the KML file and open it in Google Earth (download from http://www.google.com/earth/index.html) or view it in Google Maps (by adding it to your GitHub gh-pages branch) as demonstrated in the lecture to verify that you have successfully created the file. Submit the KML file (as a link in your writeup) as part of your writeup for the milestone.</li>
-	
-	<p><b> ANSWER:</b> Download Google Earth NM Boundry With Added Placemark (KML): <a href="KML/nm_state_bdy_00_PM.kml"</a>KML File<a/></p>
-	
-	</ul>	
-	
-	</body>
+		</body>
 	
 	
 </html>
