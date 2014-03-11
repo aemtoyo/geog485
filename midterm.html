@@ -82,7 +82,7 @@ And answer the following questions (4 pts each)
 		<li>1200 pixels wide (you will need to calculate the height based upon the aspect ratio of the bounding box)</li>
 		<li>Bounding Box (EPSG:4326): Min X = -128 East Longitude, Min Y = 21.5 North Latitude, Max X = -62 East Longitude, Max Y = 54.5 North Latitude</li>
 		<li> Layer to be mapped = “MOD_LSTD_CLIM_M”</li>
-		<p><b>ANSWER:</b> <img src="http://neo.sci.gsfc.nasa.gov/servlet/FGDCMetadata?VERSION=1.1.1&SERVICE=WMS&REQUEST=GetMap&BBOX=-106.639,35.074,-106.609,35.094&LAYERS=MOD_LSTD_CLIM_M&WIDTH=600&HEIGHT=400&CRS=EPSG:4326&FORMAT=image/png&STYLES="</p>
+		<p><b>ANSWER:</b> <img src="http://neo.sci.gsfc.nasa.gov/servlet/FGDCMetadata/datasetId=MOD_LSTD_CLIM_M?VERSION=1.1.1&SERVICE=WMS&REQUEST=GetMap&BBOX=-106.639,35.074,-106.609,35.094&LAYERS=MOD_LSTD_CLIM_M&WIDTH=600&HEIGHT=400&CRS=EPSG:4326&FORMAT=image/png&STYLES="</p>
 	</ul>
 
 <h2>Question 6 <i>From the XML GetCapabilities returned by the following WFS request answer the following questions (4 pts each)</i></h2>
@@ -90,13 +90,13 @@ And answer the following questions (4 pts each)
 request=GetCapabilities&service=WFS</p>
 	<ol>
 		<li>What is the title for this service?</li>
-		<p><b>ANSWER:</b><p>
+		<p><b>ANSWER:</b> WFS_transportation<p>
 		<li>What ﬁle format(s) are supported by this service’s GetFeature request?</li>
-		<p><b>ANSWER:</b> 
+		<p><b>ANSWER:</b> text/xml;subType=gml/3.1.1/profiles/gmlsf/1.0.0/0
 		<li>What is the DefaultSRS or the FeatureType named “WFS_transportation:Interstate”?</li>
-		<p><b>ANSWER:</b> 
+		<p><b>ANSWER:</b> rn:ogc:def:crs:EPSG:6.9:4326</p>
 		<li>What is the WGS84BoundingBox of the FeatureType named “WFS_transportation:Interstate”?</li>
-		<p><b>ANSWER:</b> 
+		<p><b>ANSWER:</b>LowerCorner>-158.10419299999992 21.277850000000058 andUpperCorner>-67.781173999999908 49.002374000000088</p> 
 	</ol>
 
 <h2>Question 7 <i>From the XML GetCapabilities returned by the following WCS request answer the following questions (4 pts each)</i></h2>
