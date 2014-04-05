@@ -1,0 +1,168 @@
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script type="text/javascript">
+    
+       // define global variables
+        var lon = -106.518146;
+        var lat = 35.918131;
+        var zoom = 10;
+        var map;
+        var gsat, gphy, gmap, ghyb;                    // Google Maps Layers	
+        var OSMlayer;                                  // OpenStreetMap Layer  
+        
+        
+        // =============== Initialization function ===================
+        function init(){
+            map = new OpenLayers.Map( 'map',{
+            maxExtent: new OpenLayers.Bounds(
+                -128 * 156543.0339,
+                -128 * 156543.0339,
+                128 * 156543.0339,
+                128 * 156543.0339),
+                maxResolution: 156543.0339,                
+                units: 'm',
+                projection: new OpenLayers.Projection('EPSG:3857'),
+                displayProjection: new OpenLayers.Projection("EPSG:4326"),
+            } );
+            
+        // =========== Create Some Styles ==============
+			// Define some Styles
+    		myRedPointStyle = {
+    			pointRadius: 12, 
+    			fillColor: "#CC0000",
+    			fillOpacity: .5,
+    			strokeOpacity: .5}
+
+    		mycalderaStyle = {
+    			fillColor: "#88ff00",
+    			fillOpacity: .2,
+    			strokeOpacity: .5,
+    			strokeColor: "#88ff00"}
+    			
+    	// =========== Create Some Geometries & Features ==============
+
+			// Key Coordinates (Geometries)
+			var Coord_losalamos = new OpenLayers.Geometry.Point(-106.305685,35.883017);
+    		var Coord_espanola = new OpenLayers.Geometry.Point(-106.063645,35.997945);
+    		var Coord_caldera = new OpenLayers.Geometry.LinearRing([
+    			new OpenLayers.Geometry.Point(-106.529875, 35.998510),
+     			new OpenLayers.Geometry.Point(-106.437521, 35.993233),
+    			new OpenLayers.Geometry.Point(-106.364050, 35.952945),
+    			new OpenLayers.Geometry.Point(-106.400785, 35.887746),
+    			new OpenLayers.Geometry.Point(-106.446791, 35.847961),
+    			new OpenLayers.Geometry.Point(-106.543951, 35.817343),
+    			new OpenLayers.Geometry.Point(-106.617079, 35.837385),
+    			new OpenLayers.Geometry.Point(-106.632185, 35.876897),
+    			new OpenLayers.Geometry.Point(-106.615362, 35.937241),
+    			new OpenLayers.Geometry.Point(-106.603003, 35.993927),
+    			new OpenLayers.Geometry.Point(-106.530561, 35.999066),
+   			]);
+   							
+    		
+    		// Corresponding Features
+    		var Point_losalamos = new OpenLayers.Feature.Vector(Coord_losalamos,null,myRedPointStyle);
+    		var Point_espanola = new 
+OpenLayers.Feature.Vector(Coord_espanola,null,myRedPointStyle);
+    		var LinearRing_caldera = new 
+OpenLayers.Feature.Vector(Coord_caldera,null, mycalderaStyle);
+    	
+    		
+    		Layers["localFeatures"].addFeatures([Point_losalamos, Point_espanola, LinearRing_caldera]);
+    		
+            
+            // ================= Google Maps ====================            
+            
+            gsat = new OpenLayers.Layer.Google(
+                "Google Satellite",
+                {type: google.maps.MapTypeId.SATELLITE, numZoomLevels: 22}
+            );
+            
+            gphy = new OpenLayers.Layer.Google(
+                "Google Physical",
+                {type: google.maps.MapTypeId.TERRAIN}
+            );
+            gmap = new OpenLayers.Layer.Google(
+                "Google Streets", // the default
+                {numZoomLevels: 20}
+            );
+            ghyb = new OpenLayers.Layer.Google(
+                "Google Hybrid",
+                {type: google.maps.MapTypeId.HYBRID, numZoomLevels: 20}
+            );
+            
+
+            map.addLayers([gsat, gmap, ghyb, gphy]);
+
+     
+
+            // ================= OSM Map ====================
+            OSMlayer = new OpenLayers.Layer.OSM( "Simple OSM Map");
+            map.addLayer(OSMlayer);
+
+            
+            // Google.v3 uses EPSG:900913 as projection, so we have to
+            // transform our coordinates
+            map.setCenter(new OpenLayers.LonLat(lon,lat).transform(
+                new OpenLayers.Projection("EPSG:4326"),
+                map.getProjectionObject()
+             ), zoom);
+                
+            map.addControl(new OpenLayers.Control.LayerSwitcher() );
+        }
+        // =============== End of Initialization Function ============
+        
+    </script>
+    <style type="text/css">
+		  html { height: 100% }
+		  body { height: 100%; 
+			margin: 10px; 
+			padding: 10px; 
+			background-color: black; 
+			color: #CCCCCC;
+			text-align: left}
+		  #map { width:80%; 
+			height:80%; 
+			margin-left: auto; 
+			margin-right: auto }
+		</style> 
+  </head>
+  
+  <body onload="init()">
+  
+  <body>
+	<p>
+	Andrew Martinez<br>
+	April 5, 2014
+	</p>
+	
+	<h1>Lab Assignment / Assignment #9</h1>
+	
+	<h2>Question 1</h2>
+	<p>What area do you want to depict in your map? Why?</p>
+	<p><b>ANSWER:</b> The area I would like to depict in my map is the Valles Caldera National Preserve that is located in the Jemez Mountains. I would like to depict this area because I would like to show the large extent of the once active volcano. </p>
+	
+	<h2>Question 2</h2>
+	<p>What is the center point (latitude and longitude) of your area of interest?</p>
+	<p><b>ANSWER:</b> 35.918131,-106.518146</p>
+	
+	<h2>Question 3</h2>
+	<p>What base map(s) did you select for use in your map? Why?</p>
+	<p><b>ANSWER:</b> I used the google maps. These maps were used because the google physical map along with the satellite imagery will allow you to distinguish the border and outline of what once was a active volcano. The road maps are simply for reference to its location in the rest of the state.</p>
+	
+	<h2>Question 4</h2>
+	<p> What is the scale of your map (local, regional, continental, global)? How will this translate into your selection of an appropriate default zoom level for your map?</p>
+	<p><b>ANSWER:</b> I think that the scale of this map has been captured in the area between local and regional. It is a map the is depicting a local feature as a whole but is across a large region due to the simple fact that the caldera is quite large.</p>
+	
+	<h2>Question 5</h2>
+	<p>Embed the OpenLayers Map in your writeup (included with the answers to questions 1-4 above) that is based upon your responses to questions 1-4 above. </p>
+	<p><b>ANSWER:</b></p> 
+    
+    <!-- Map DIV -->
+    <div id="map"></div>
+    
+  </body>
+</html>
