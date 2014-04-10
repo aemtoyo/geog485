@@ -12,7 +12,7 @@
         var map;
         var gsat, gphy, gmap, ghyb;                    // Google Maps Layers	
         var OSMlayer;                                  // OpenStreetMap Layer  
-        var Layers                                     // Created Layers
+        var Layers  = new Object();                    // Created Layers
         
         // =============== Initialization function ===================
         
@@ -33,7 +33,7 @@
             
         // =========== Create and add a Vector layer to the map that that will contain the created features ====
     		
-    		Layers.localFeatures = new OpenLayers.Layer.Vector('My Local Features');
+    		Layers["localFeatures"] = new OpenLayers.Layer.Vector('Local Features');
     		map.addLayer(Layers.localFeatures);
             
         // =========== Create Some Styles ==============
@@ -51,26 +51,76 @@
     			strokeOpacity: .5,
     			strokeColor: "#88ff00"}
     			
+    		mysoilsStyle = {
+    			fillColor: "#88ff00",
+    			fillOpacity: .2,
+    			strokeOpacity: .5,
+    			strokeColor: "#88ff00"}
+    			
+    		myCountiesStyle = {
+    			fillColor: "#ffffff",
+    			fillOpacity: .2,
+    			strokeOpacity: .5,
+    			strokeColor: "#ff0000"}
+    			
     	// =========== Create Some Geometries & Features ==============
 			// Key Coordinates (Geometries)
 			
-			var Coord_losalamos = new OpenLayers.Geometry.Point(-106.305685,35.883017);
-    		var Coord_espanola = new OpenLayers.Geometry.Point(-106.063645,35.997945);
+			var Coord_losalamos = new OpenLayers.Geometry.Point(-106.305685,35.883017).transform(
+                new OpenLayers.Projection("EPSG:4326"),
+                map.getProjectionObject()
+             );
+    		var Coord_espanola = new OpenLayers.Geometry.Point(-106.063645,35.997945).transform(
+                new OpenLayers.Projection("EPSG:4326"),
+                map.getProjectionObject()
+             );
     		var Coord_caldera = new OpenLayers.Geometry.LinearRing([
-    			new OpenLayers.Geometry.Point(-106.529875, 35.998510),
-     			new OpenLayers.Geometry.Point(-106.437521, 35.993233),
-    			new OpenLayers.Geometry.Point(-106.364050, 35.952945),
-    			new OpenLayers.Geometry.Point(-106.400785, 35.887746),
-    			new OpenLayers.Geometry.Point(-106.446791, 35.847961),
-    			new OpenLayers.Geometry.Point(-106.543951, 35.817343),
-    			new OpenLayers.Geometry.Point(-106.617079, 35.837385),
-    			new OpenLayers.Geometry.Point(-106.632185, 35.876897),
-    			new OpenLayers.Geometry.Point(-106.615362, 35.937241),
-    			new OpenLayers.Geometry.Point(-106.603003, 35.993927),
-    			new OpenLayers.Geometry.Point(-106.530561, 35.999066),
+    			new OpenLayers.Geometry.Point(-106.529875, 35.998510).transform(
+                new OpenLayers.Projection("EPSG:4326"),
+                map.getProjectionObject()
+             ),
+     			new OpenLayers.Geometry.Point(-106.437521, 35.993233).transform(
+                new OpenLayers.Projection("EPSG:4326"),
+                map.getProjectionObject()
+             ),
+    			new OpenLayers.Geometry.Point(-106.364050, 35.952945).transform(
+                new OpenLayers.Projection("EPSG:4326"),
+                map.getProjectionObject()
+             ),
+    			new OpenLayers.Geometry.Point(-106.400785, 35.887746).transform(
+                new OpenLayers.Projection("EPSG:4326"),
+                map.getProjectionObject()
+             ),
+    			new OpenLayers.Geometry.Point(-106.446791, 35.847961).transform(
+                new OpenLayers.Projection("EPSG:4326"),
+                map.getProjectionObject()
+             ),
+    			new OpenLayers.Geometry.Point(-106.543951, 35.817343).transform(
+                new OpenLayers.Projection("EPSG:4326"),
+                map.getProjectionObject()
+             ),
+    			new OpenLayers.Geometry.Point(-106.617079, 35.837385).transform(
+                new OpenLayers.Projection("EPSG:4326"),
+                map.getProjectionObject()
+             ),
+    			new OpenLayers.Geometry.Point(-106.632185, 35.876897).transform(
+                new OpenLayers.Projection("EPSG:4326"),
+                map.getProjectionObject()
+             ),
+    			new OpenLayers.Geometry.Point(-106.615362, 35.937241).transform(
+                new OpenLayers.Projection("EPSG:4326"),
+                map.getProjectionObject()
+             ),
+    			new OpenLayers.Geometry.Point(-106.603003, 35.993927).transform(
+                new OpenLayers.Projection("EPSG:4326"),
+                map.getProjectionObject()
+             ),
+    			new OpenLayers.Geometry.Point(-106.530561, 35.999066).transform(
+                new OpenLayers.Projection("EPSG:4326"),
+                map.getProjectionObject()
+             ),
    			]);
    							
-    		
     		// Corresponding Features
     		
     		var Point_losalamos = new OpenLayers.Feature.Vector(Coord_losalamos,null,myRedPointStyle);
@@ -87,7 +137,6 @@
                 "Google Satellite",
                 {type: google.maps.MapTypeId.SATELLITE, numZoomLevels: 22}
             );
-            
             gphy = new OpenLayers.Layer.Google(
                 "Google Physical",
                 {type: google.maps.MapTypeId.TERRAIN}
@@ -102,7 +151,7 @@
             );
             
 
-            map.addLayers([gsat, gmap, ghyb, gphy]);
+            map.addLayers([gphy, gmap, ghyb, gsat]);
 
      
 
@@ -119,8 +168,38 @@
                 new OpenLayers.Projection("EPSG:4326"),
                 map.getProjectionObject()
              ), zoom);
-                
+            
+            volcanoesLayer = new OpenLayers.Layer.WMS( 
+            	"Geology - Volcanoes", 
+            	"http://webservices.nationalatlas.gov/wms/geology?",
+            	{layers: "volcanoes", version: '1.1.0', transparent: 'TRUE'},
+            	{isBaseLayer: false, visibility: false}
+            );
+            map.addLayer(volcanoesLayer);
+            
+    	// =========== KML Layer Addition ===============
+    	
+    		Layers.counties = new OpenLayers.Layer.Vector("KML - Counties", {
+                projection: map.displayProjection,
+                visibility: false,
+                style: myCountiesStyle,
+                strategies: [new OpenLayers.Strategy.Fixed()],
+                protocol: new OpenLayers.Protocol.HTTP({
+                    url: "http://kkb-web.s3.amazonaws.com/data/NMCounties.kml",
+                    format: new OpenLayers.Format.KML({
+                        extractAttributes: true
+                    })
+                })
+            });
+           	map.addLayer(Layers.counties)
+           	
+          //============  OSM Controls  =============================== 	
+            	
+			            
             map.addControl(new OpenLayers.Control.LayerSwitcher() );
+            map.addControl(new OpenLayers.Control.MousePosition() );
+            map.addControl(new OpenLayers.Control.Permalink() );
+            map.addControl(new OpenLayers.Control.PanZoomBar() );
         }
         // =============== End of Initialization Function ============
         
