@@ -23,10 +23,61 @@
 		<body>
 		<p>Andrew Martinez<br>
 				April 10th 2014</p>
+	
 	<h1>Lab Assignment / Assignment #10</h1>
 	
-	<h2>Question 1</h2> 
+	<h2> Add three WMS layers to a new map project in QGIS, with one coming from each of the following collections of WMS services.</h2> 
+		
+		<ul>
+			
+			<li>USGS's National Maps Service Endpoints Page: <a href="http://viewer.nationalmap.gov/example/services/serviceList.html">
+			http://viewer.nationalmap.gov/example/services/serviceList.html</a></li>
+			
+			<li>NRCS Soil Data Mart WMS Service: <a href="http://SDMDataAccess.nrcs.usda.gov/Spatial/SDM.wms?SERVICE=WMS&REQUEST=GetCapabilities">
+			http://SDMDataAccess.nrcs.usda.gov/Spatial/SDM.wms?SERVICE=WMS&REQUEST=GetCapabilities</a></li>
+			
+		</ul>
+		
+	<p>In your write-up include the names of the layers you added, which service they came from, and screen shots (one for for each of the added layers) showing each of them in the QGIS client interface.</p>
 	
+	<p><b>ANSWERS:</b>
+		<ul>
+			<li><p>USGS Topo Base Map - Primary Tile Cache from the http://viewer.nationalmap.gov/example/services/serviceList.html </p></li>
+			<img src=IMAGES/wms1.png>
+			
+			<li><p>Land Cover from the http://viewer.nationalmap.gov/example/services/serviceList.html</p></li>
+			<img src=IMAGES/wms2.png>
+			
+			<li><p></p></li>
+			<img src=IMAGES/>
+		
+		</ul>
+	</p>
+	
+	<p>Add three WFS layers to the same QGIS project, two based upon data available from the RGIS data browser (http://rgis.unm.edu/browsedata), and one based on the USGS GeoNames WFS service <a href="http://services.nationalmap.gov/arcgis/services/WFS/geonames/MapServer/WFSServer?request=GetCapabilities&service=WFS">http://services.nationalmap.gov/arcgis/services/WFS/geonames/MapServer/WFSServer?request=GetCapabilities&service=WFS.</a></p> 
+
+	<p>In your write-up include the names of the layers you added, and the GetCapabilities requests related to those layers. Also include screen shots (again, one for each added layer) showing each layer in your QGIS project.</p>
+	
+	<p><b>ANSWERS:</b>
+		<ul>
+			<li><p> NM 500 FT Contour Intervals from RGIS</p>
+				<p> Get Map Request: http://gstore.unm.edu/apps/rgis/datasets/c0324950-6f96-49e4-a638-da7423c71ec3/services/ogc/wfs?VERSION=1.0.0</p>
+			</li>
+			<img src=IMAGES/wfs1.png>
+			
+			<li><p> NM Cites and Towns from RGIS</p>
+				<p>Get Map Request: http://gstore.unm.edu/apps/rgis/datasets/02eddccb-bd3a-4751-9346-19a69c6421f3/services/ogc/wfs?VERSION=1.0.0</p>
+			</li>
+			<img src=IMAGES/wfs2.png>
+			
+			<li><p>Cultural Points from services.nationalmap.gov/arcgis/services/WFS/geonames/MapServer/WFSServer?request=GetCapabilities&service=WFS</p>
+				<p>Get Map Request: http://services.nationalmap.gov/arcgis/services/WFS/geonames/MapServer/WFSServer</p>
+			</li>
+			<img src=IMAGES/wfs3.png>
+		
+		</ul>
+	</p>
+
 		</body>
 	
 	</head>
